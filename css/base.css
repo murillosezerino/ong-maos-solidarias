@@ -1,0 +1,81 @@
+/* Estilos base: elementos HTML, cabeçalho, conteúdo, botões, formulário e rodapé */
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  font-family: var(--fonte-base);
+  font-size: var(--fs-base);
+  font-weight: var(--peso-regular);
+  line-height: var(--altura-linha);
+  color: var(--cinza-900);
+  background: var(--branco);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--cor-primaria); }
+a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+h1, h2, h3 { line-height: var(--altura-linha-titulo); }
+h1 { font-size: var(--fs-titulo); color: var(--cor-primaria); margin: 0 0 var(--esp-4); }
+h2 { font-size: var(--fs-grande); color: var(--cor-secundaria); margin: var(--esp-6) 0 var(--esp-3); }
+h3 { font-size: var(--fs-media); color: var(--cor-primaria); margin: var(--esp-4) 0 var(--esp-2); }
+
+/* ===== Cabeçalho e navegação ===== */
+header {
+  padding: var(--esp-3) 5%;
+  background: var(--cor-primaria);
+}
+header a { color: var(--branco); }
+[aria-current="page"] { font-weight: var(--peso-negrito); text-decoration-color: var(--cor-destaque); text-decoration-thickness: 3px; }
+
+/* ===== Conteúdo ===== */
+main { max-width: var(--largura-conteudo); margin: 0 auto; padding: var(--esp-5) 5% var(--esp-7); }
+figure { margin: var(--esp-4) 0; }
+figcaption { font-size: var(--fs-pequeno); color: var(--cinza-600); margin-top: var(--esp-2); }
+article { margin-bottom: var(--esp-4); }
+#impacto ul { list-style: none; padding: 0; row-gap: var(--esp-3); }
+#impacto li { padding: var(--esp-4); background: var(--cor-primaria-clara); border-radius: var(--raio-medio); }
+#impacto strong { display: block; font-size: var(--fs-titulo); color: var(--cor-primaria); }
+address { font-style: normal; }
+aside {
+  margin-top: var(--esp-6); padding: var(--esp-4);
+  background: var(--cor-secundaria-clara);
+  border-left: 6px solid var(--cor-secundaria);
+}
+aside > h2 { margin-top: 0; }
+dt { font-weight: var(--peso-negrito); }
+dd { margin: 0 0 var(--esp-3); }
+progress { width: 100%; max-width: 24rem; height: var(--esp-3); accent-color: var(--cor-secundaria); }
+
+/* ===== Botões ===== */
+.botao, button {
+  padding: var(--esp-3) var(--esp-4);
+  border: 0; border-radius: var(--raio-total);
+  background: var(--cor-destaque); color: var(--cinza-900);
+  font: var(--peso-negrito) var(--fs-base) var(--fonte-base);
+  text-decoration: none; cursor: pointer;
+}
+
+/* ===== Formulário ===== */
+fieldset {
+  margin: 0 0 var(--esp-4); padding: var(--esp-3) var(--esp-4);
+  border: 2px solid var(--cinza-300); border-radius: var(--raio-medio);
+  background: var(--cinza-100);
+}
+legend { padding: 0 var(--esp-2); font-weight: var(--peso-negrito); color: var(--cor-primaria); }
+label { display: block; margin-top: var(--esp-3); }
+input[type="checkbox"] + label { display: inline; margin: 0 var(--esp-3) 0 var(--esp-1); }
+input:not([type="checkbox"]), select {
+  width: 100%; padding: var(--esp-2) var(--esp-3);
+  border: 1px solid var(--cinza-600); border-radius: var(--raio-pequeno);
+  font: inherit;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  padding: var(--esp-4) 5%;
+  background: var(--cor-primaria-escura); color: var(--branco);
+  font-size: var(--fs-pequeno); text-align: center;
+}

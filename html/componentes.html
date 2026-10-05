@@ -1,0 +1,50 @@
+<!-- View: Guia de componentes -->
+<h1 tabindex="-1">Guia de componentes</h1>
+<p>Referência visual dos componentes de feedback e das classes que devem ser usadas no front-end e no back-end.</p>
+<section id="badges" aria-labelledby="t-badges">
+<h2 id="t-badges">Badges</h2>
+<p>Etiquetas curtas para classificar projetos e campanhas. Classe base <code>.badge</code> com um modificador.</p>
+<ul class="etiquetas">
+<li class="badge badge--info">Informativo</li>
+<li class="badge badge--sucesso">Em andamento</li>
+<li class="badge badge--aviso">Vagas limitadas</li>
+<li class="badge badge--erro">Urgente</li>
+<li class="badge badge--neutro">Encerrado</li>
+</ul>
+</section>
+<section id="alertas" aria-labelledby="t-alertas">
+<h2 id="t-alertas">Alertas</h2>
+<p>Mensagens fixas na página. Classe base <code>.alerta</code> com um modificador. Use <code>role="alert"</code> apenas em erros que aparecem após uma ação.</p>
+<div class="alerta alerta--info"><p><strong>Informação:</strong> o cadastro leva cerca de 3 minutos.</p></div>
+<div class="alerta alerta--sucesso"><p><strong>Tudo certo:</strong> seu cadastro foi recebido.</p></div>
+<div class="alerta alerta--aviso"><p><strong>Atenção:</strong> faltam 180 cestas para atingir a meta.</p></div>
+<div class="alerta alerta--erro"><p><strong>Erro:</strong> não foi possível enviar o formulário. Tente novamente.</p></div>
+</section>
+<section id="toasts" aria-labelledby="t-toasts">
+<h2 id="t-toasts">Toasts</h2>
+<p>Notificações temporárias que não bloqueiam a página. Chame <code>mostrarToast(mensagem, tipo)</code> no JavaScript.</p>
+<div class="grupo-botoes">
+<button type="button" class="botao" data-toast="sucesso" data-mensagem="Cadastro enviado com sucesso.">Toast de sucesso</button>
+<button type="button" class="botao botao--secundario" data-toast="info" data-mensagem="Novas vagas de voluntariado disponíveis.">Toast informativo</button>
+<button type="button" class="botao botao--secundario" data-toast="aviso" data-mensagem="Sua sessão expira em 5 minutos.">Toast de aviso</button>
+<button type="button" class="botao botao--secundario" data-toast="erro" data-mensagem="Não foi possível copiar a chave Pix.">Toast de erro</button>
+</div>
+</section>
+<section id="modal" aria-labelledby="t-modal">
+<h2 id="t-modal">Modal</h2>
+<p>Janela de confirmação feita com o elemento nativo <code>&lt;dialog&gt;</code>. Abra com <code>data-abre-modal</code> e feche com <code>data-fecha-modal</code> ou Esc.</p>
+<button type="button" class="botao" data-abre-modal="modal-exemplo">Abrir modal</button>
+</section>
+<dialog class="modal" id="modal-exemplo" aria-labelledby="modal-exemplo-titulo">
+<div class="modal__cabecalho">
+<h2 class="modal__titulo" id="modal-exemplo-titulo">Confirmar inscrição</h2>
+<button type="button" class="modal__fechar" data-fecha-modal aria-label="Fechar">&times;</button>
+</div>
+<div class="modal__corpo">
+<p>Você está se inscrevendo na reunião de acolhimento de voluntários, no sábado, às 9h.</p>
+</div>
+<div class="modal__rodape">
+<button type="button" class="botao botao--secundario" data-fecha-modal>Cancelar</button>
+<button type="button" class="botao" data-fecha-modal data-toast="sucesso" data-mensagem="Inscrição confirmada. Até sábado!">Confirmar</button>
+</div>
+</dialog>

@@ -2,6 +2,10 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento semântico.
 
+## [1.0.1]
+### Corrigido
+- Rascunho vazio era salvo e exibia o aviso de recuperação sem dados.
+
 ## [1.0.0]
 ### Adicionado
 - SPA com roteamento por hash: Início, Projetos, Cadastro e Guia de componentes.

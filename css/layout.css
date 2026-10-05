@@ -1,0 +1,151 @@
+/* =========================================================
+   FLEXBOX: ALINHAMENTO DOS COMPONENTES INTERNOS
+   ========================================================= */
+
+/* Menu "Nesta página" */
+main nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--esp-2) var(--esp-4);
+  list-style: none; margin: 0; padding: 0;
+}
+
+/* Logotipo no cabeçalho */
+header > a { display: inline-flex; align-items: center; justify-self: start; }
+
+/* Cartões de indicadores de impacto */
+#impacto li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--esp-1);
+}
+
+/* Cartões de projetos: imagem no topo, texto ocupa o espaço restante */
+#projetos > article {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--cinza-100);
+  border-radius: var(--raio-medio);
+}
+#projetos > article > picture { order: -1; }
+#projetos > article > h3,
+#projetos > article > p { margin-inline: var(--esp-4); }
+#projetos > article > p { flex-grow: 1; margin-top: 0; }
+
+/* Linhas de contato: ícone + texto */
+address p {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--esp-2);
+}
+address img { flex-shrink: 0; margin-top: 0.2em; }
+
+/* Botões e chamadas para ação */
+.botao, button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+}
+
+/* Grupo de checkboxes das áreas de interesse */
+form > fieldset:nth-of-type(3) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--esp-2) var(--esp-4);
+}
+.opcao {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+}
+.opcao > input + label { margin: 0; }
+
+/* Aceite dos termos: checkbox + texto */
+.termos {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+}
+.termos > input + label { margin: 0; }
+
+/* Rodapé */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-2);
+}
+footer p { margin: 0; }
+footer a { color: var(--branco); }
+
+/* =========================================================
+   GRID DE 12 COLUNAS (mobile first)
+   ========================================================= */
+header,
+main,
+#sobre, #missao, #impacto ul, #projetos, form {
+  display: grid;
+  grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+  column-gap: var(--gap-grid);
+  align-content: start;
+}
+/* Por padrão, todo filho ocupa as 12 colunas (layout de 1 coluna no celular) */
+header > *, main > *,
+#sobre > *, #missao > *, #impacto li, #projetos > *, form > * {
+  grid-column: 1 / -1;
+}
+header { position: relative; row-gap: var(--esp-3); align-items: center; }
+form > button { justify-self: start; margin-top: var(--esp-4); }
+
+/* 1) Celulares grandes: a partir de 480px */
+@media (min-width: 480px) {
+  #impacto li { grid-column: span 6; }
+  #impacto li:last-child { grid-column: 1 / -1; }
+}
+
+/* 2) Tablets em pé: a partir de 768px */
+@media (min-width: 768px) {
+  header > a { grid-column: 1 / span 4; }
+  header > .menu { grid-column: 5 / -1; justify-self: end; }
+  #missao > article { grid-column: span 4; }
+  #impacto li, #impacto li:last-child { grid-column: span 4; }
+  #projetos > article { grid-column: span 6; }
+}
+
+/* 3) Tablets deitados e notebooks: a partir de 1024px */
+@media (min-width: 1024px) {
+  #sobre > figure { grid-column: 1 / span 7; }
+  #sobre > p { grid-column: 8 / -1; align-self: center; }
+  main > #voluntariado { grid-column: 1 / span 6; }
+  main > #doacao { grid-column: 7 / -1; }
+  form > fieldset:nth-of-type(1) { grid-column: 1 / span 6; }
+  form > fieldset:nth-of-type(2) { grid-column: 7 / -1; }
+}
+
+/* 4) Desktops: a partir de 1280px */
+@media (min-width: 1280px) {
+  :root {
+    --largura-conteudo: 75rem;
+    --gap-grid: var(--esp-5);
+  }
+  header { padding-inline: max(5%, calc((100% - var(--largura-conteudo)) / 2 + 5%)); }
+  .menu__lista { gap: var(--esp-5); }
+}
+
+/* 5) Desktops panorâmicos: a partir de 1536px */
+@media (min-width: 1536px) {
+  :root {
+    --largura-conteudo: 90rem;
+    --gap-grid: var(--esp-6);
+  }
+  html { font-size: 112.5%; }
+  main > #impacto { grid-column: 1 / span 6; }
+  main > #contato { grid-column: 7 / -1; }
+  #impacto li, #impacto li:last-child { grid-column: span 6; }
+  #impacto li:last-child { grid-column: 1 / -1; }
+}

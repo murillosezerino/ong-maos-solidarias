@@ -1,0 +1,55 @@
+<!-- View: Cadastro -->
+<h1 tabindex="-1">Seja voluntário</h1>
+<div class="alerta alerta--info">
+<p><strong>Antes de começar:</strong> campos com * são obrigatórios. O cadastro leva cerca de 3 minutos.</p>
+</div>
+<div id="resumo-erros" tabindex="-1"></div>
+<form action="#" method="post" novalidate>
+<fieldset>
+<legend>Dados pessoais</legend>
+<label for="nome">Nome completo *</label>
+<input type="text" id="nome" name="nome" required minlength="5" autocomplete="name">
+<label for="cpf">CPF *</label>
+<input type="text" id="cpf" name="cpf" required inputmode="numeric" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" title="Formato 000.000.000-00" aria-describedby="dica-cpf">
+<small class="dica" id="dica-cpf">Somente números; a pontuação é inserida automaticamente.</small>
+<label for="nascimento">Data de nascimento *</label>
+<input type="date" id="nascimento" name="nascimento" required>
+<label for="email">E-mail *</label>
+<input type="email" id="email" name="email" required autocomplete="email" aria-describedby="dica-email">
+<small class="dica" id="dica-email">Exemplo: nome@dominio.com.br</small>
+<label for="telefone">Telefone *</label>
+<input type="tel" id="telefone" name="telefone" required maxlength="15" pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(00) 00000-0000" title="Formato (00) 00000-0000" aria-describedby="dica-telefone">
+<small class="dica" id="dica-telefone">Inclua o DDD. Exemplo: (12) 99999-9999</small>
+</fieldset>
+<fieldset>
+<legend>Endereço</legend>
+<label for="cep">CEP *</label>
+<input type="text" id="cep" name="cep" required inputmode="numeric" maxlength="9" pattern="\d{5}-\d{3}" placeholder="00000-000" title="Formato 00000-000" aria-describedby="dica-cep">
+<small class="dica" id="dica-cep">8 números. Exemplo: 12345-678</small>
+<label for="endereco">Endereço *</label>
+<input type="text" id="endereco" name="endereco" required autocomplete="address-line1">
+<label for="cidade">Cidade *</label>
+<input type="text" id="cidade" name="cidade" required autocomplete="address-level2">
+<label for="estado">Estado *</label>
+<select id="estado" name="estado" required>
+<option value="">Selecione</option>
+<option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+</select>
+</fieldset>
+<fieldset>
+<legend>Em quais áreas deseja atuar?</legend>
+<span class="opcao"><input type="checkbox" id="a-cozinha" name="areas" value="cozinha"><label for="a-cozinha">Cozinha</label></span>
+<span class="opcao"><input type="checkbox" id="a-educacao" name="areas" value="educacao"><label for="a-educacao">Educação</label></span>
+<span class="opcao"><input type="checkbox" id="a-eventos" name="areas" value="eventos"><label for="a-eventos">Eventos</label></span>
+</fieldset>
+<p class="termos">
+<input type="checkbox" id="termos" name="termos" required>
+<label for="termos">Concordo com os termos de voluntariado *</label>
+</p>
+<button type="submit">Enviar cadastro</button>
+</form>
+<section id="meus-cadastros" aria-labelledby="t-meus" hidden>
+<h2 id="t-meus">Cadastros salvos neste navegador</h2>
+<p>Os dados ficam guardados apenas neste dispositivo (localStorage). O CPF é salvo parcialmente oculto.</p>
+<ul class="lista-cadastros"></ul>
+</section>

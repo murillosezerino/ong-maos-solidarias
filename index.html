@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ONG Mãos Solidárias: segurança alimentar, educação e geração de renda.">
+<title>ONG Mãos Solidárias</title>
+<link rel="stylesheet" href="css/variaveis.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/componentes.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+<a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+<header>
+<a href="#/inicio"><img src="imagens/logo.svg" alt="ONG Mãos Solidárias - página inicial" width="180" height="48"></a>
+<nav class="menu" aria-label="Menu principal">
+<button class="menu__botao" type="button" aria-expanded="false" aria-controls="menu-lista">
+<span class="menu__icone" aria-hidden="true"></span>
+<span class="menu__texto">Menu</span>
+</button>
+<ul class="menu__lista" id="menu-lista">
+<li class="menu__item"><a class="menu__link" href="#/inicio">Início</a></li>
+<li class="menu__item menu__item--submenu"><a class="menu__link" href="#/projetos">Projetos</a>
+<ul class="submenu">
+<li><a class="submenu__link" href="#/projetos/projetos">Projetos em andamento</a></li>
+<li><a class="submenu__link" href="#/projetos/voluntariado">Como ser voluntário</a></li>
+<li><a class="submenu__link" href="#/projetos/doacao">Campanhas de doação</a></li>
+</ul>
+</li>
+<li class="menu__item"><a class="menu__link" href="#/cadastro">Seja voluntário</a></li>
+</ul>
+</nav>
+</header>
+<main id="conteudo">
+<noscript><p>Esta plataforma precisa de JavaScript ativado para funcionar.</p></noscript>
+</main>
+<footer>
+<p><a href="#/componentes">Guia de componentes</a></p>
+<p><small>&copy; 2026 ONG Mãos Solidárias</small></p>
+</footer>
+<div class="toasts" role="status" aria-live="polite"></div>
+</body>
+</html>

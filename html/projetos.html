@@ -1,0 +1,73 @@
+<!-- View: Projetos -->
+<h1 tabindex="-1">Projetos solidários</h1>
+<p>Conheça nossas frentes de atuação e escolha como participar.</p>
+<nav aria-label="Nesta página">
+<ul>
+<li><a href="#/projetos/projetos">Projetos</a></li>
+<li><a href="#/projetos/voluntariado">Voluntariado</a></li>
+<li><a href="#/projetos/doacao">Doação</a></li>
+</ul>
+</nav>
+<section id="projetos" aria-labelledby="t-proj">
+<h2 id="t-proj">Projetos em andamento</h2>
+<!-- Cartões gerados por js/templates/componentes.js a partir de js/dados/projetos.js -->
+</section>
+<section id="voluntariado" aria-labelledby="t-vol">
+<h2 id="t-vol">Como ser voluntário</h2>
+<ol>
+<li>Preencha o cadastro on-line.</li>
+<li>Participe da reunião de acolhimento.</li>
+<li>Escolha sua área e seus horários.</li>
+</ol>
+<h3>Áreas disponíveis</h3>
+<ul>
+<li>Cozinha: 4 horas semanais</li>
+<li>Educação: 2 horas semanais</li>
+<li>Eventos: aos fins de semana</li>
+</ul>
+<a class="botao" href="#/cadastro">Quero ser voluntário</a>
+</section>
+<section id="doacao" aria-labelledby="t-doa">
+<h2 id="t-doa">Campanhas de doação</h2>
+<article>
+<h3>Natal sem fome</h3>
+<ul class="etiquetas" aria-label="Situação">
+<li class="badge badge--erro">Urgente</li>
+</ul>
+<p>Meta: 500 cestas básicas até dezembro.</p>
+<label for="meta-natal">Arrecadado:</label>
+<progress id="meta-natal" max="500" value="320">320 de 500</progress>
+<div class="alerta alerta--aviso">
+<p><strong>Atenção:</strong> faltam 180 cestas para atingir a meta, e a campanha termina em 20 de dezembro.</p>
+</div>
+<button type="button" class="botao" data-abre-modal="modal-doacao">Quero doar</button>
+</article>
+<h3>Formas de doar</h3>
+<dl>
+<dt>Pix</dt><dd>doe@maossolidarias.org.br</dd>
+<dt>Transferência</dt><dd>Banco 000, agência 0001, conta 12345-6</dd>
+<dt>Itens</dt><dd>Alimentos e roupas na sede, de segunda a sexta.</dd>
+</dl>
+</section>
+<aside aria-labelledby="t-transp">
+<h2 id="t-transp">Transparência</h2>
+<p>Publicamos anualmente como cada real doado foi utilizado.</p>
+<a href="mailto:contato@maossolidarias.org.br?subject=Relat%C3%B3rio%20anual">Solicitar o relatório anual</a>
+</aside>
+<dialog class="modal" id="modal-doacao" aria-labelledby="modal-doacao-titulo">
+<div class="modal__cabecalho">
+<h2 class="modal__titulo" id="modal-doacao-titulo">Doe para o Natal sem fome</h2>
+<button type="button" class="modal__fechar" data-fecha-modal aria-label="Fechar">&times;</button>
+</div>
+<div class="modal__corpo">
+<p>Cada R$ 90 garante uma cesta básica para uma família. Faça um Pix para a chave abaixo:</p>
+<p class="modal__destaque" id="chave-pix">doe@maossolidarias.org.br</p>
+<div class="alerta alerta--info">
+<p>Você recebe o comprovante de doação por e-mail em até 48 horas.</p>
+</div>
+</div>
+<div class="modal__rodape">
+<button type="button" class="botao botao--secundario" data-fecha-modal>Fechar</button>
+<button type="button" class="botao" data-copiar="chave-pix">Copiar chave Pix</button>
+</div>
+</dialog>

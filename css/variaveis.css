@@ -1,0 +1,74 @@
+/* =========================================================
+   DESIGN SYSTEM - ONG Mãos Solidárias
+   ========================================================= */
+:root {
+  /* Cores primárias (azul-petróleo: confiança e seriedade) */
+  --cor-primaria: #1d4e5f;
+  --cor-primaria-escura: #133642;
+  --cor-primaria-clara: #e8f1f3;
+
+  /* Cores secundárias (verde-folha: esperança e cuidado) */
+  --cor-secundaria: #2e7d5b;
+  --cor-secundaria-clara: #e6f2ec;
+
+  /* Cor de destaque (girassol: chamadas para ação) */
+  --cor-destaque: #f4c542;
+  --cor-destaque-escura: #e0ac1f;  /* hover */
+  --cor-destaque-ativa: #c99a1b;   /* active */
+
+  /* Cores de feedback */
+  --cor-erro: #b3261e;
+  --cor-erro-clara: #fbe9e7;
+  --cor-sucesso: #2e7d5b;
+  --cor-sucesso-texto: #1f5a41;
+  --cor-aviso: #e0ac1f;
+  --cor-aviso-clara: #fdf3d6;
+  --cor-aviso-texto: #6b4e00;
+  --cor-erro-texto: #8c1d17;
+
+  /* Neutros */
+  --cinza-900: #1b2430;
+  --cinza-600: #4a5560;
+  --cinza-300: #c5ccd2;
+  --cinza-200: #e1e5e8;
+  --cinza-100: #f4f6f7;
+  --branco: #ffffff;
+
+  /* Tipografia: escala modular 1.25 (terça maior), base 16px */
+  --fonte-base: "Nunito", "Segoe UI", system-ui, sans-serif;
+  --fs-pequeno: 0.875rem;   /* 14px - legendas, rodapé */
+  --fs-base: 1rem;          /* 16px - corpo de texto */
+  --fs-media: 1.25rem;      /* 20px - h3, destaques */
+  --fs-grande: 1.563rem;    /* 25px - h2 */
+  --fs-titulo: clamp(1.953rem, 1.5rem + 2vw, 2.441rem); /* 31-39px - h1 */
+  --peso-regular: 400;
+  --peso-negrito: 700;
+  --altura-linha: 1.6;
+  --altura-linha-titulo: 1.2;
+
+  /* Espaçamento modular: base 8px */
+  --esp-1: 0.25rem;  /* 4px */
+  --esp-2: 0.5rem;   /* 8px */
+  --esp-3: 1rem;     /* 16px */
+  --esp-4: 1.5rem;   /* 24px */
+  --esp-5: 2rem;     /* 32px */
+  --esp-6: 3rem;     /* 48px */
+  --esp-7: 4rem;     /* 64px */
+
+  /* Bordas e larguras */
+  --raio-pequeno: 0.25rem;
+  --raio-medio: 0.5rem;
+  --raio-total: 999px;
+  --largura-conteudo: 60rem;
+
+  /* Sombras e transições */
+  --sombra-botao: 0 2px 6px rgba(27, 36, 48, 0.2);
+  --sombra-botao-hover: 0 6px 14px rgba(27, 36, 48, 0.25);
+  --anel-foco: 0 0 0 4px var(--cor-primaria-clara);
+  --transicao: 0.2s ease;
+  --sombra-flutuante: 0 12px 32px rgba(27, 36, 48, 0.3);
+
+  /* Grid */
+  --colunas: 12;
+  --gap-grid: var(--esp-4);
+}

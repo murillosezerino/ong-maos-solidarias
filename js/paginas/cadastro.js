@@ -20,7 +20,7 @@ function renderizarLista(raiz) {
 
 function restaurarRascunho(formulario) {
   const rascunho = armazenamento.lerRascunho();
-  if (!rascunho) return;
+  if (!rascunho || !Object.values(rascunho).some(Boolean)) return;
   CAMPOS_RASCUNHO.forEach(id => { if (rascunho[id]) formulario.elements[id].value = rascunho[id]; });
   mostrarToast('Recuperamos o preenchimento que você não terminou.', 'info');
 }
@@ -51,7 +51,9 @@ export function iniciar(raiz) {
   // Rascunho automático (sem CPF, por segurança)
   formulario.addEventListener('input', () => {
     const dados = Object.fromEntries(CAMPOS_RASCUNHO.map(id => [id, formulario.elements[id].value]));
-    armazenamento.salvarRascunho(dados);
+    // Formulário totalmente vazio não gera rascunho
+    if (Object.values(dados).some(Boolean)) armazenamento.salvarRascunho(dados);
+    else armazenamento.limparRascunho();
   });
 
   // Links do resumo de erros levam o foco ao campo

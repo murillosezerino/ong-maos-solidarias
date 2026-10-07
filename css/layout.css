@@ -81,7 +81,7 @@ footer {
   gap: var(--esp-2);
 }
 footer p { margin: 0; }
-footer a { color: var(--branco); }
+footer a { color: var(--cor-texto-inverso); }
 
 /* =========================================================
    GRID DE 12 COLUNAS (mobile first)

@@ -34,6 +34,17 @@
   --cinza-100: #f4f6f7;
   --branco: #ffffff;
 
+  /* Papéis de cor (semânticos): os componentes usam estes nomes,
+     e cada perfil de aparência redefine apenas os valores */
+  --cor-fundo: var(--branco);
+  --cor-texto: var(--cinza-900);
+  --cor-texto-inverso: var(--branco);         /* texto sobre cabeçalho, rodapé e toast */
+  --cor-texto-sobre-destaque: var(--cinza-900); /* texto sobre o amarelo dos botões */
+  --cor-cabecalho: var(--cor-primaria);
+  --cor-rodape: var(--cor-primaria-escura);
+  --cor-toast: var(--cinza-900);
+  color-scheme: light;
+
   /* Tipografia: escala modular 1.25 (terça maior), base 16px */
   --fonte-base: "Nunito", "Segoe UI", system-ui, sans-serif;
   --fs-pequeno: 0.875rem;   /* 14px - legendas, rodapé */
@@ -72,3 +83,90 @@
   --colunas: 12;
   --gap-grid: var(--esp-4);
 }
+
+/* =========================================================
+   PERFIS DE APARÊNCIA
+   O atributo data-tema / data-contraste é definido no <html> por um script
+   no <head>, a partir da escolha salva ou da preferência do sistema.
+   Todas as combinações foram verificadas com contraste de 4,5:1 ou mais.
+   ========================================================= */
+
+/* Modo escuro */
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --cor-fundo: #10171c;
+  --cinza-100: #1a242c;
+  --cinza-200: #25313b;
+  --cinza-300: #3d4b56;
+  --cinza-600: #aab5be;
+  --cinza-900: #e8edf1;
+  --cor-texto: #e8edf1;
+  --cor-primaria: #7cc7dc;
+  --cor-primaria-clara: #15323d;
+  --cor-primaria-escura: #a9dbe8;
+  --cor-secundaria: #6fd0a0;
+  --cor-secundaria-clara: #12302a;
+  --cor-sucesso: #6fd0a0;
+  --cor-sucesso-texto: #9fe3c1;
+  --cor-aviso-clara: #342a0c;
+  --cor-aviso-texto: #f5d580;
+  --cor-erro: #ff8a80;
+  --cor-erro-clara: #3b1916;
+  --cor-erro-texto: #ffb3ab;
+  --cor-cabecalho: #0f2e38;
+  --cor-rodape: #0b222a;
+  --cor-toast: #25313b;
+  --cor-texto-sobre-destaque: #1b2430;
+  --sombra-flutuante: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Alto contraste (claro) */
+:root[data-contraste="alto"] {
+  --cor-fundo: #ffffff;
+  --cinza-100: #ffffff;
+  --cinza-300: #4a5560;
+  --cinza-600: #1b2430;
+  --cinza-900: #000000;
+  --cor-texto: #000000;
+  --cor-primaria: #0b3a47;
+  --cor-primaria-escura: #062730;
+  --cor-secundaria: #145a3a;
+  --cor-sucesso: #145a3a;
+  --cor-sucesso-texto: #0b3d26;
+  --cor-aviso: #6b4e00;
+  --cor-aviso-texto: #4a3600;
+  --cor-erro: #8c1d17;
+  --cor-erro-texto: #6b130f;
+  --cor-cabecalho: #0b2a33;
+  --cor-rodape: #000000;
+  --cor-toast: #000000;
+  --cor-texto-sobre-destaque: #000000;
+}
+
+/* Alto contraste (escuro) */
+:root[data-tema="escuro"][data-contraste="alto"] {
+  --cor-fundo: #000000;
+  --cinza-100: #000000;
+  --cinza-200: #1f2a33;
+  --cinza-300: #9aa7b0;
+  --cinza-600: #e0e6ea;
+  --cinza-900: #ffffff;
+  --cor-texto: #ffffff;
+  --cor-primaria: #a6e3f5;
+  --cor-primaria-clara: #0b2128;
+  --cor-primaria-escura: #d2f1fa;
+  --cor-secundaria: #9cf0c4;
+  --cor-secundaria-clara: #0a2119;
+  --cor-sucesso: #9cf0c4;
+  --cor-sucesso-texto: #c2f7da;
+  --cor-aviso: #ffd75e;
+  --cor-aviso-clara: #231c06;
+  --cor-aviso-texto: #ffe7a3;
+  --cor-erro: #ffaaa3;
+  --cor-erro-clara: #2a0f0d;
+  --cor-erro-texto: #ffd1cc;
+  --cor-cabecalho: #000000;
+  --cor-rodape: #000000;
+  --cor-toast: #1f2a33;
+}
+

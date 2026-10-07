@@ -8,8 +8,8 @@ body {
   font-size: var(--fs-base);
   font-weight: var(--peso-regular);
   line-height: var(--altura-linha);
-  color: var(--cinza-900);
-  background: var(--branco);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--cor-primaria); }
@@ -22,6 +22,7 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 header a:focus-visible,
 header button:focus-visible,
 footer a:focus-visible,
+footer button:focus-visible,
 .pular-conteudo:focus-visible {
   outline-color: var(--cor-destaque);
 }
@@ -33,9 +34,9 @@ h3 { font-size: var(--fs-media); color: var(--cor-primaria); margin: var(--esp-4
 /* ===== Cabeçalho e navegação ===== */
 header {
   padding: var(--esp-3) 5%;
-  background: var(--cor-primaria);
+  background: var(--cor-cabecalho);
 }
-header a { color: var(--branco); }
+header a { color: var(--cor-texto-inverso); }
 [aria-current="page"] { font-weight: var(--peso-negrito); text-decoration-color: var(--cor-destaque); text-decoration-thickness: 3px; }
 
 /* ===== Conteúdo ===== */
@@ -61,7 +62,7 @@ progress { width: 100%; max-width: 24rem; height: var(--esp-3); accent-color: va
 .botao, button {
   padding: var(--esp-3) var(--esp-4);
   border: 0; border-radius: var(--raio-total);
-  background: var(--cor-destaque); color: var(--cinza-900);
+  background: var(--cor-destaque); color: var(--cor-texto-sobre-destaque);
   font: var(--peso-negrito) var(--fs-base) var(--fonte-base);
   text-decoration: none; cursor: pointer;
 }
@@ -84,6 +85,6 @@ input:not([type="checkbox"]), select {
 /* ===== Rodapé ===== */
 footer {
   padding: var(--esp-4) 5%;
-  background: var(--cor-primaria-escura); color: var(--branco);
+  background: var(--cor-rodape); color: var(--cor-texto-inverso);
   font-size: var(--fs-pequeno); text-align: center;
 }

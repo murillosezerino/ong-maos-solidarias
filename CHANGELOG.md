@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento semântico.
 
+## [1.3.0]
+### Adicionado
+- Modo escuro e alto contraste, com botões no rodapé, preferência do sistema e suporte a cores forçadas (#18).
+
+### Alterado
+- Design system com variáveis semânticas de cor (fundo, texto, cabeçalho, rodapé).
+
 ## [1.2.1]
 ### Corrigido
 - Deploy no GitHub Pages: actions atualizadas para versões compatíveis com o Node.js 24 e build com Node.js 22 LTS.

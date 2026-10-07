@@ -2,6 +2,11 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento semântico.
 
+## [1.2.0]
+### Adicionado
+- Testes unitários com node:test para validação, máscaras e templates, executados no CI antes do deploy (#11).
+- README completo com demonstração, instalação, scripts, arquitetura e versionamento, além da licença MIT (#12).
+
 ## [1.1.0]
 ### Adicionado
 - Conformidade com a WCAG 2.1 AA: foco com contraste adequado, autocomplete nos campos e toast com pausa durante a leitura (#2).

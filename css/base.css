@@ -13,9 +13,17 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--cor-primaria); }
+/* Foco visível com contraste mínimo de 3:1 (WCAG 1.4.11):
+   azul-petróleo em fundos claros (9,1:1) e girassol em fundos escuros (5,6:1) */
 a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible {
-  outline: 3px solid var(--cor-destaque);
+  outline: 3px solid var(--cor-primaria);
   outline-offset: 2px;
+}
+header a:focus-visible,
+header button:focus-visible,
+footer a:focus-visible,
+.pular-conteudo:focus-visible {
+  outline-color: var(--cor-destaque);
 }
 h1, h2, h3 { line-height: var(--altura-linha-titulo); }
 h1 { font-size: var(--fs-titulo); color: var(--cor-primaria); margin: 0 0 var(--esp-4); }

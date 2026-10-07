@@ -2,6 +2,13 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento semântico.
 
+## [1.1.0]
+### Adicionado
+- Conformidade com a WCAG 2.1 AA: foco com contraste adequado, autocomplete nos campos e toast com pausa durante a leitura (#2).
+- Build de produção com esbuild: de 26 para 9 requisições na primeira carga (#3).
+- Deploy automático no GitHub Pages com GitHub Actions (#4).
+- Modelos de issue e de pull request (#5).
+
 ## [1.0.1]
 ### Corrigido
 - Rascunho vazio era salvo e exibia o aviso de recuperação sem dados.

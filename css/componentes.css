@@ -129,6 +129,8 @@
   }
   .submenu__link:hover,
   .submenu__link:focus-visible { background: var(--cor-primaria-clara); }
+  /* O submenu tem fundo branco dentro do cabeçalho escuro: o foco volta ao azul */
+  header .submenu__link:focus-visible { outline-color: var(--cor-primaria); }
 }
 
 /* Respeita quem prefere menos movimento */

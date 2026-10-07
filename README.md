@@ -9,6 +9,17 @@ de um servidor local. Abrir o `index.html` direto pelo explorador de arquivos n�
 - VS Code: extensão **Live Server** > botão "Go Live".
 - Ou, no terminal, dentro da pasta do projeto: `python -m http.server 8000` e acesse http://localhost:8000
 
+## Build de produção
+Requer Node.js 18 ou superior.
+
+```bash
+npm install        # instala o esbuild
+npm run build      # gera a pasta dist/ otimizada
+npm run preview    # serve a pasta dist/ em http://localhost:4173
+```
+
+O build une os 13 módulos JavaScript em um único arquivo minificado, une os 4 arquivos CSS em um, remove comentários e espaços das views e copia as imagens. A primeira carga cai de 26 para 9 requisições.
+
 ## Estrutura
 - `index.html`: shell da aplicação (cabeçalho, menu, área `<main>` e rodapé).
 - `html/`: views de cada rota, carregadas pelo roteador.

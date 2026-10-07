@@ -2,6 +2,10 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento semântico.
 
+## [1.2.1]
+### Corrigido
+- Deploy no GitHub Pages: actions atualizadas para versões compatíveis com o Node.js 24 e build com Node.js 22 LTS.
+
 ## [1.2.0]
 ### Adicionado
 - Testes unitários com node:test para validação, máscaras e templates, executados no CI antes do deploy (#11).

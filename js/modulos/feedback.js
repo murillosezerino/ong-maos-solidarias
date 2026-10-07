@@ -13,7 +13,15 @@ export function mostrarToast(mensagem, tipo = 'info') {
   };
   toast.querySelector('.toast__fechar').addEventListener('click', remover);
   area.appendChild(toast);
-  setTimeout(remover, 5000);
+
+  // O tempo para sumir pausa enquanto a pessoa lê com o mouse ou o teclado (WCAG 2.2.1)
+  let temporizador = setTimeout(remover, 5000);
+  const pausar = () => clearTimeout(temporizador);
+  const retomar = () => { temporizador = setTimeout(remover, 3000); };
+  toast.addEventListener('mouseenter', pausar);
+  toast.addEventListener('mouseleave', retomar);
+  toast.addEventListener('focusin', pausar);
+  toast.addEventListener('focusout', retomar);
 }
 
 // Ativa botões de toast, modais e cópia dentro de uma view recém-renderizada

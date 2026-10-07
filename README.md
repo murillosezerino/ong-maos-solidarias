@@ -43,6 +43,7 @@ Single Page Application para uma organização do terceiro setor divulgar seus p
 - **Persistência local:** cadastros e rascunho do formulário salvos no `localStorage`, com o CPF armazenado parcialmente oculto.
 - **Projetos e doações:** cartões gerados a partir de dados, campanha com barra de progresso e modal com a chave Pix e botão de copiar.
 - **Gráfico de impacto:** famílias atendidas por ano com Chart.js e tabela alternativa caso a biblioteca não carregue.
+- **Modo escuro e alto contraste:** botões no rodapé, preferência do sistema respeitada automaticamente e suporte ao modo de cores forçadas do Windows.
 - **Componentes de feedback:** badges, alertas, toasts e modal, documentados na página *Guia de componentes*.
 
 ## Tecnologias
@@ -57,7 +58,7 @@ Single Page Application para uma organização do terceiro setor divulgar seus p
 | CI/CD | GitHub Actions e GitHub Pages |
 
 ## Acessibilidade
-O projeto segue a **WCAG 2.1 nível AA**. A auditoria com axe-core não aponta violações em nenhuma rota, e a revisão manual cobre navegação por teclado, contraste, reflow em 320px e leitores de tela. Destaques: link para pular ao conteúdo, foco levado ao título a cada troca de página, erros associados aos campos por `aria-describedby` e respeito à preferência por menos movimento.
+O projeto segue a **WCAG 2.1 nível AA**. A auditoria com axe-core não aponta violações em nenhuma rota, e a revisão manual cobre navegação por teclado, contraste, reflow em 320px e leitores de tela. Destaques: modo escuro e alto contraste com todas as combinações acima de 4,5:1, link para pular ao conteúdo, foco levado ao título a cada troca de página, erros associados aos campos por `aria-describedby` e respeito à preferência por menos movimento.
 
 Detalhes, problemas encontrados e correções: [ACESSIBILIDADE.md](ACESSIBILIDADE.md).
 

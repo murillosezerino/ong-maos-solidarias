@@ -30,13 +30,27 @@ export function carregarChartJs() {
 const cor = nome => getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
 
 let graficoAtual = null;
+const contrasteAlto = () => document.documentElement.getAttribute('data-contraste') === 'alto';
+
+// Recolore o gráfico quando o usuário troca o tema ou o contraste
+window.addEventListener('aparencia:mudou', () => {
+  if (!graficoAtual?.canvas?.isConnected) return;
+  const [serie] = graficoAtual.data.datasets;
+  serie.backgroundColor = cor('--cor-secundaria');
+  serie.hoverBackgroundColor = cor('--cor-primaria');
+  serie.borderColor = cor('--cor-texto');
+  serie.borderWidth = contrasteAlto() ? 2 : 0;
+  graficoAtual.options.scales.y.grid.color = cor('--cinza-200');
+  graficoAtual.options.scales.y.ticks.color = cor('--cinza-600');
+  graficoAtual.options.scales.x.ticks.color = cor('--cinza-600');
+  graficoAtual.update('none');
+});
 
 export async function criarGraficoBarras(canvas, rotulos, valores, legenda) {
   const Chart = await carregarChartJs();
   graficoAtual?.destroy(); // evita gráficos duplicados ao voltar para a página
 
   Chart.defaults.font.family = cor('--fonte-base');
-  Chart.defaults.color = cor('--cinza-600');
 
   graficoAtual = new Chart(canvas, {
     type: 'bar',
@@ -47,6 +61,8 @@ export async function criarGraficoBarras(canvas, rotulos, valores, legenda) {
         data: valores,
         backgroundColor: cor('--cor-secundaria'),
         hoverBackgroundColor: cor('--cor-primaria'),
+        borderColor: cor('--cor-texto'),
+        borderWidth: contrasteAlto() ? 2 : 0,
         borderRadius: 6
       }]
     },
@@ -57,8 +73,8 @@ export async function criarGraficoBarras(canvas, rotulos, valores, legenda) {
       animation: matchMedia('(prefers-reduced-motion: reduce)').matches ? false : { duration: 800 },
       plugins: { legend: { display: false } },
       scales: {
-        y: { beginAtZero: true, grid: { color: cor('--cinza-200') } },
-        x: { grid: { display: false } }
+        y: { beginAtZero: true, grid: { color: cor('--cinza-200') }, ticks: { color: cor('--cinza-600') } },
+        x: { grid: { display: false }, ticks: { color: cor('--cinza-600') } }
       }
     }
   });

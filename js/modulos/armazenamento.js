@@ -40,3 +40,8 @@ export function removerCadastro(id) {
 export const lerRascunho = () => ler('rascunho', null);
 export const salvarRascunho = dados => gravar('rascunho', dados);
 export const limparRascunho = () => apagar('rascunho');
+
+// ----- Preferências de aparência (tema e contraste) -----
+// Lidas também pelo script do <head>, antes do CSS, para evitar troca de cores ao carregar
+export const lerAparencia = () => ler('aparencia', {});
+export const salvarAparencia = preferencias => gravar('aparencia', preferencias);

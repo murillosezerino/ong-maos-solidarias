@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="ONG Mãos Solidárias: segurança alimentar, educação e geração de renda.">
 <title>ONG Mãos Solidárias</title>
+<script>
+(function () {
+  var salvo = {};
+  try { salvo = JSON.parse(localStorage.getItem('maos-solidarias:aparencia')) || {}; } catch (e) { salvo = {}; }
+  var prefere = function (consulta) { return window.matchMedia && window.matchMedia(consulta).matches; };
+  var raiz = document.documentElement;
+  raiz.setAttribute('data-tema', salvo.tema || (prefere('(prefers-color-scheme: dark)') ? 'escuro' : 'claro'));
+  raiz.setAttribute('data-contraste', salvo.contraste || (prefere('(prefers-contrast: more)') ? 'alto' : 'normal'));
+})();
+</script>
 <link rel="stylesheet" href="css/variaveis.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/layout.css">
@@ -37,6 +47,10 @@
 <noscript><p>Esta plataforma precisa de JavaScript ativado para funcionar.</p></noscript>
 </main>
 <footer>
+<div class="aparencia" role="group" aria-label="Aparência">
+<button type="button" class="aparencia__botao" data-aparencia="tema" aria-pressed="false">Modo escuro</button>
+<button type="button" class="aparencia__botao" data-aparencia="contraste" aria-pressed="false">Alto contraste</button>
+</div>
 <p><a href="#/componentes">Guia de componentes</a></p>
 <p><small>&copy; 2026 ONG Mãos Solidárias</small></p>
 </footer>

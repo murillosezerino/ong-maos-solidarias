@@ -11,6 +11,22 @@
 | 1.3.5 Finalidade da entrada | Nascimento, telefone, CEP e estado sem `autocomplete` | Tokens `bday`, `tel`, `postal-code` e `address-level1` |
 | 2.2.1 Tempo ajustável | Toast sumia em 5 s mesmo durante a leitura | Tempo pausa com mouse ou foco e recomeça ao sair |
 
+## Perfis de cor: modo escuro e alto contraste
+O rodapé tem dois botões de alternância (`aria-pressed`): **Modo escuro** e **Alto contraste**. Sem escolha salva, a aplicação segue o sistema operacional (`prefers-color-scheme` e `prefers-contrast`). A escolha fica no `localStorage` e é aplicada por um script no `<head>`, antes do CSS, para que a página nunca seja desenhada com as cores erradas. O modo de cores forçadas do sistema (Alto Contraste do Windows) também é suportado com `@media (forced-colors: active)`.
+
+Os componentes usam variáveis semânticas (`--cor-fundo`, `--cor-texto`, `--cor-cabecalho` e outras), e cada perfil redefine apenas os valores. Contraste medido pela fórmula de luminância relativa da WCAG e confirmado pelo axe-core (regra `color-contrast`) nas 4 combinações, em 1280px e 375px:
+
+| Elemento | Claro | Escuro | Alto contraste | Escuro + alto contraste |
+|---|---|---|---|---|
+| Texto principal | 15,65:1 | 15,34:1 | 21:1 | 21:1 |
+| Links e títulos | 9,1:1 | 9,52:1 | 12,28:1 | 14,93:1 |
+| Legendas e dicas | 7,61:1 | 8,66:1 | 15,65:1 | 16,68:1 |
+| Mensagem de erro | 6,54:1 | 7,92:1 | 9,12:1 | 11,53:1 |
+| Botão de ação | 9,62:1 | 9,62:1 | 12,91:1 | 12,91:1 |
+| Menu no cabeçalho | 9,1:1 | 14,3:1 | 15,07:1 | 21:1 |
+
+No alto contraste, bordas, sublinhados e contornos de foco também ficam mais espessos, e o gráfico ganha contorno nas barras.
+
 ## Critérios atendidos (principais)
 - **1.1.1** Imagens informativas com `alt` descritivo; decorativas com `alt=""`; gráfico com `role="img"`, descrição e tabela alternativa.
 - **1.3.1** Estrutura semântica (`header`, `nav`, `main`, `section`, `footer`), títulos sem saltos, `fieldset`/`legend` e `label` ligado a cada campo.

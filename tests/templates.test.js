@@ -23,6 +23,9 @@ test('gera cartão de projeto com imagens WebP e JPG e texto alternativo', () =>
   assert.match(html, /imagens\/horta\.webp/);
   assert.match(html, /imagens\/horta\.jpg/);
   assert.match(html, /alt="Pessoas plantando mudas"/);
+  assert.match(html, /srcset="imagens\/horta-400\.webp 400w, imagens\/horta\.webp 600w"/);
+  assert.match(html, /sizes="[^"]*90vw"/);
+  assert.match(html, /loading="lazy"/);
   assert.match(html, /Horta &lt;b&gt;comunitária&lt;\/b&gt;/);
 });
 

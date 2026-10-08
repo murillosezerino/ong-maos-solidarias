@@ -102,7 +102,7 @@ Os testes ficam em `tests/` e cobrem as funções puras da aplicação: validaç
 npm run build
 npm run preview
 ```
-O build une os 15 módulos JavaScript em um único arquivo minificado, une os 4 arquivos CSS em um, remove comentários e espaços das páginas e copia as imagens. A primeira carga cai de **26 para 9 requisições**.
+O build une os 16 módulos JavaScript em um único arquivo minificado, une os 4 arquivos CSS em um, remove comentários e espaços das páginas e copia as imagens. O código cai de 75 KB para 53 KB (17 KB com gzip), e a primeira carga, de **27 para 9 requisições**.
 
 O deploy é automático: a cada push na branch `main`, o workflow [`deploy.yml`](.github/workflows/deploy.yml) instala as dependências, executa os testes, gera o build e publica a pasta `dist/` no GitHub Pages.
 
@@ -120,7 +120,7 @@ ong-maos-solidarias/
 │   ├── app.js            # Ponto de entrada
 │   ├── router.js         # Roteamento por hash
 │   ├── paginas/          # Lógica de cada página
-│   ├── modulos/          # Menu, máscaras, validação, armazenamento, feedback e gráficos
+│   ├── modulos/          # Menu, aparência, máscaras, validação, armazenamento, feedback e gráficos
 │   ├── templates/        # Funções que geram HTML a partir de dados
 │   └── dados/            # Dados dos projetos e do gráfico
 ├── imagens/              # SVG, WebP e JPG

@@ -104,6 +104,8 @@ npm run preview
 ```
 O build une os 16 módulos JavaScript em um único arquivo minificado, une os 4 arquivos CSS em um, remove comentários e espaços das páginas e copia as imagens. O código cai de 75 KB para 53 KB (17 KB com gzip), e a primeira carga, de **27 para 9 requisições**.
 
+As fotos usam `<picture>` com WebP e JPG de reserva, em duas larguras com `srcset` e `sizes`: celulares de densidade 1x baixam a versão de 400 px (39% menos dados), e telas de alta densidade recebem a maior. Fotos abaixo da primeira tela usam `loading="lazy"`.
+
 O deploy é automático: a cada push na branch `main`, o workflow [`deploy.yml`](.github/workflows/deploy.yml) instala as dependências, executa os testes, gera o build e publica a pasta `dist/` no GitHub Pages.
 
 ## Estrutura do projeto

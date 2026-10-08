@@ -10,6 +10,12 @@ export function escapar(texto) {
     .replaceAll("'", '&#39;');
 }
 
+// Imagens responsivas: o navegador escolhe a versão de 400 px ou de 600 px
+// conforme a largura que o cartão ocupa (medida em cada breakpoint) e a densidade da tela
+const TAMANHOS_CARTAO = '(min-width: 1536px) 600px, (min-width: 1280px) 520px, (min-width: 1024px) 417px, (min-width: 768px) 44vw, 90vw';
+const variantes = (imagem, formato) =>
+  `imagens/${imagem}-400.${formato} 400w, imagens/${imagem}.${formato} 600w`;
+
 export const badge = ({ texto, tipo = 'neutro' }) =>
   `<li class="badge badge--${tipo}">${escapar(texto)}</li>`;
 
@@ -20,8 +26,9 @@ export const cartaoProjeto = projeto => `
     ${projeto.etiquetas.map(badge).join('')}
   </ul>
   <picture>
-    <source srcset="imagens/${projeto.imagem}.webp" type="image/webp">
-    <img src="imagens/${projeto.imagem}.jpg" alt="${escapar(projeto.alt)}" width="600" height="400" loading="lazy">
+    <source type="image/webp" srcset="${variantes(projeto.imagem, 'webp')}" sizes="${TAMANHOS_CARTAO}">
+    <img src="imagens/${projeto.imagem}.jpg" srcset="${variantes(projeto.imagem, 'jpg')}" sizes="${TAMANHOS_CARTAO}"
+      alt="${escapar(projeto.alt)}" width="600" height="400" loading="lazy">
   </picture>
   <p>${escapar(projeto.descricao)}</p>
 </article>`;

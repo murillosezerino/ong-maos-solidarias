@@ -2,6 +2,10 @@
 
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento semântico.
 
+## [1.4.0]
+### Adicionado
+- Imagens responsivas com srcset e sizes: celulares de densidade 1x baixam fotos de 400 px, com 39% menos dados (#23).
+
 ## [1.3.1]
 ### Corrigido
 - README: números do build atualizados após o modo escuro (16 módulos, 27 → 9 requisições) e módulo de aparência incluído na estrutura.
